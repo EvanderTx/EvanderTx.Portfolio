@@ -4,7 +4,7 @@ Este é o meu portfólio profissional, desenvolvido com **Blazor WebAssembly** e
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **Framework:** [Blazor WebAssembly](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) (C# .NET 8/9)
+* **Framework:** [Blazor WebAssembly](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) (C# .NET 10)
 * **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
 * **Ícones:** [Lucide Icons](https://lucide.dev/)
 * **Animações:** Intersection Observer API & Tailwind Keyframes
