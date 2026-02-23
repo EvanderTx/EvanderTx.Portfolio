@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|f:\\myssd\\programming\\front-end\\blazor wasm\\evandertx.portfolio\\evandertx.portfolio\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|solutionrelative:evandertx.portfolio\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|f:\\myssd\\programming\\front-end\\blazor wasm\\evandertx.portfolio\\evandertx.portfolio\\components\\contactos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|solutionrelative:evandertx.portfolio\\components\\contactos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|f:\\myssd\\programming\\front-end\\blazor wasm\\evandertx.portfolio\\evandertx.portfolio\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|solutionrelative:evandertx.portfolio\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|f:\\myssd\\programming\\front-end\\blazor wasm\\evandertx.portfolio\\evandertx.portfolio\\components\\sobre.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|solutionrelative:evandertx.portfolio\\components\\sobre.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|f:\\myssd\\programming\\front-end\\blazor wasm\\evandertx.portfolio\\evandertx.portfolio\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{250DCC7A-D4A7-5800-E669-EBABEEE1DDAE}|EvanderTx.Portfolio\\EvanderTx.Portfolio.csproj|solutionrelative:evandertx.portfolio\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "EvanderTx.Portfolio\\wwwroot\\index.html",
+              "ToolTip": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\wwwroot\\index.html",
+              "RelativeToolTip": "EvanderTx.Portfolio\\wwwroot\\index.html",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-23T17:15:38.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Contactos.razor",
+              "DocumentMoniker": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\Components\\Contactos.razor",
+              "RelativeDocumentMoniker": "EvanderTx.Portfolio\\Components\\Contactos.razor",
+              "ToolTip": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\Components\\Contactos.razor",
+              "RelativeToolTip": "EvanderTx.Portfolio\\Components\\Contactos.razor",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-23T16:41:33.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.razor",
+              "DocumentMoniker": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "EvanderTx.Portfolio\\Pages\\Home.razor",
+              "ToolTip": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\Pages\\Home.razor",
+              "RelativeToolTip": "EvanderTx.Portfolio\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-21T16:54:57.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Sobre.razor",
+              "DocumentMoniker": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\Components\\Sobre.razor",
+              "RelativeDocumentMoniker": "EvanderTx.Portfolio\\Components\\Sobre.razor",
+              "ToolTip": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\Components\\Sobre.razor",
+              "RelativeToolTip": "EvanderTx.Portfolio\\Components\\Sobre.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-21T18:03:19.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "EvanderTx.Portfolio\\Layout\\MainLayout.razor",
+              "ToolTip": "F:\\MYSSD\\Programming\\Front-End\\Blazor WASM\\EvanderTx.Portfolio\\EvanderTx.Portfolio\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "EvanderTx.Portfolio\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-21T17:22:31.7Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

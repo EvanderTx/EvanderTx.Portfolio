@@ -1,0 +1,76 @@
+﻿@inject IJSRuntime JS
+
+@* Substituímos animate-fade-in por reveal e adicionamos a lógica de delay *@
+<div class="relative pl-8 pb-12 border-l border-purple-500/20 last:pb-0 reveal @DelayClass">
+    <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-[#0b0e14] border-2 border-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
+
+    <div class="bg-[#11161d] border border-white/5 rounded-2xl p-6 md:p-8 hover:border-purple-500/30 transition-all group shadow-xl">
+        <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-2">
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <i data-lucide="briefcase" class="w-5 h-5 text-purple-400"></i>
+                    <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">@Cargo</h3>
+                </div>
+                <p class="text-purple-300 font-medium">@Empresa</p>
+            </div>
+            @* Badge de período como no seu design *@
+            <span class="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium border border-white/10">
+                @Periodo
+            </span>
+        </div>
+
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">@Descricao</p>
+
+        @* Lista de Responsabilidades com ícones Lucide *@
+        <div class="flex flex-col mb-6 gap-2">
+            <h3 class="font-bold text-gray-300 text-sm">Principais Responsabilidades:</h3>
+            @foreach (var resp in Responsabilidades)
+            {
+                <div class="flex items-baseline gap-2 text-gray-400 text-sm">
+                    <i class="text-purple-500 mt-1 flex-shrink-0" data-lucide="play" style="width: 10px; height: 10px; fill: currentColor;"></i>
+                    <span>@resp</span>
+                </div>
+            }
+        </div>
+
+        @* Tags de Tecnologias arredondadas *@
+        <div class="flex flex-wrap gap-2">
+            @foreach (var tech in Tecnologias)
+            {
+                <span class="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-[11px] font-medium">
+                    @tech
+                </span>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Cargo { get; set; }
+    [Parameter] public string Empresa { get; set; }
+    [Parameter] public string Periodo { get; set; }
+    [Parameter] public string Descricao { get; set; }
+    [Parameter] public List<string> Tecnologias { get; set; }
+    [Parameter] public List<string> Responsabilidades { get; set; }
+    
+    // Novo parâmetro para o efeito cascata
+    [Parameter] public int DelayIndex { get; set; } = 0;
+
+    private string DelayClass => DelayIndex switch
+    {
+        1 => "delay-100",
+        2 => "delay-200",
+        3 => "delay-300",
+        _ => ""
+    };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Importante: Inicializa o Scroll Reveal e os ícones
+            await JS.InvokeVoidAsync("initScrollReveal");
+            await JS.InvokeVoidAsync("lucide.createIcons");
+        }
+    }
+}

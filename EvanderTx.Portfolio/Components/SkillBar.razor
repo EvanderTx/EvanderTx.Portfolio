@@ -1,0 +1,18 @@
+﻿@* SkillBar.razor *@
+
+<div class="mb-4">
+    <div class="flex justify-center items-center mb-1 bg-purple-500 rounded-full p-2">
+        <span class="text-base font-medium text-white">@Nome</span>
+@*         <span class="@CorTexto text-sm font-bold">@Progresso%</span> *@
+    </div>
+@*     <div class="w-full bg-gray-700/50 rounded-full h-2.5">
+        <div class="@CorBarra h-2.5 rounded-full transition-all duration-700" style="width: @Progresso%"></div>
+    </div> *@
+</div>
+
+@code {
+    [Parameter] public string Nome { get; set; }
+    [Parameter] public int Progresso { get; set; }
+    [Parameter] public string CorBarra { get; set; }
+    [Parameter] public string CorTexto { get; set; }
+}

@@ -1,0 +1,19 @@
+﻿<div class="bg-[#11161d] rounded-2xl p-6 border border-slate-700 hover:border-purple-500/50 transition-all w-100">
+    <div class="flex items-center gap-4 mb-8">
+        <div class="p-3 @CorFundoIcone rounded-xl text-white">
+            <i data-lucide="@Icone" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-md font-bold text-white">@Titulo</h3>
+    </div>
+    
+    <div class="flex-grow">
+        @ChildContent
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Titulo { get; set; }
+    [Parameter] public string Icone { get; set; }
+    [Parameter] public string CorFundoIcone { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}

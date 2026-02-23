@@ -1,0 +1,64 @@
+﻿@inject IJSRuntime JS
+@inject NavigationManager Nav
+
+
+<section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 bg-pattern">
+
+    <div class="mb-6 inline-flex items-center px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 backdrop-blur-sm">
+        <span class="text-xs font-medium text-purple-300">Desenvolvedor .NET C# Full Stack</span>
+    </div>
+
+    <h1 class="text-4xl md:text-7xl font-bold mb-6 tracking-tight outline-none">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#a855f7] via-[#ec4899] to-[#f472b6]">
+            Evander Inácio Dias Teixeira
+        </span>
+    </h1>
+
+    <p class="max-w-2xl text-gray-400 text-base md:text-lg leading-relaxed mb-10">
+        Sou um jovem desenvolvedor, curioso e aberto a novos desafios, buscando sempre
+        expandir os meus conhecimentos e apresentar os melhores resultados possíveis.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <a href="mailto:evanderdiastx@gmail.com" class="cursor-pointer flex items-center justify-center gap-2 bg-[#a855f7] hover:bg-[#9333ea] text-white font-medium px-8 py-3 rounded-lg transition-all shadow-lg shadow-purple-500/20">
+            <i data-lucide="mail" class="w-5 h-5"></i> Contactar
+        </a>
+        <a href="https://github.com/EvanderTx"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="cursor-pointer flex items-center justify-center gap-2 border border-gray-700 bg-[#0b0e14]/50 hover:bg-gray-800 text-white font-medium px-8 py-3 rounded-lg transition-all">
+            <i data-lucide="github" class="w-5 h-5"></i> GitHub
+        </a>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+        <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-purple-500"></i> Luanda, Angola
+        </div>
+        <div class="flex items-center gap-2">
+            <a class="flex items-center gap-2" href="https://www.linkedin.com/in/evander-teixeira-148795196/" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="linkedin" class="w-4 h-4 text-purple-500"></i> Evander Teixeira
+            </a>     
+        </div>
+        <div class="flex items-center gap-2">
+            <a class="flex items-center gap-2" href="mailto:evanderdiastx@gmail.com">
+                <i data-lucide="mail" class="w-4 h-4 text-purple-500"></i> evanderdiastx@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <div class="absolute bottom-20 md:bottom-24 animate-bounce">
+        <i data-lucide="chevron-down" class="w-8 h-8 text-gray-400/50"></i>
+    </div>
+</section>
+
+@code {
+    // Importante: Isso garante que o Lucide transforme as tags <i> em SVGs após a renderização
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("lucide.createIcons");
+        }
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EvanderTx.Portfolio</title>
+    <base href="/" />
+    <link rel="preload" id="webassembly" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+    <!-- If you add any scoped CSS files, uncomment the following to load them
+    <link href="EvanderTx.Portfolio.styles.css" rel="stylesheet" /> -->
+    <script type="importmap"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+    <!--<div id="blazor-error-ui">
+        Ocorreu um erro inesperado.
+        <a href="" class="reload">Recarregar</a>
+        <span class="dismiss">🗙</span>
+    </div>-->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        // Função para garantir que os ícones e o reveal funcionem sem crashar
+        window.initPortfolio = () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Inicializa o Scroll Reveal que criámos
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        };
+    </script>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>

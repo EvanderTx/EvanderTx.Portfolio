@@ -1,0 +1,61 @@
+﻿<section id="habilidades" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-white mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
+            Conhecimentos Técnicos
+        </h2>
+        <div class="h-1 w-20 bg-purple-500 mx-auto rounded-full mb-10"></div>
+    </div>
+
+    <div class="flex flex-wrap md:flex-nowrap gap-3 justify-center">
+        
+        <SkillCategory Titulo="Backend" Icone="layout-grid" CorFundoIcone="bg-purple-600/20 text-purple-400">
+            <SkillBar Nome="C#" Progresso="80" CorBarra="bg-purple-500" CorTexto="text-purple-400" />
+            <SkillBar Nome=".NET Core" Progresso="80" CorBarra="bg-purple-500" CorTexto="text-purple-400" />
+            <SkillBar Nome="ASP.NET MVC" Progresso="88" CorBarra="bg-purple-500" CorTexto="text-purple-400" />
+            <SkillBar Nome="REST APIs" Progresso="50" CorBarra="bg-purple-500" CorTexto="text-purple-400" />
+            <SkillBar Nome="LinQ" Progresso="80" CorBarra="bg-purple-500" CorTexto="text-purple-400" />
+        </SkillCategory>
+
+        <SkillCategory Titulo="Frontend" Icone="code-2" CorFundoIcone="bg-pink-600/20 text-pink-400">
+            <SkillBar Nome="Blazor" Progresso="35" CorBarra="bg-pink-500" CorTexto="text-pink-400" />
+            <SkillBar Nome="HTML5" Progresso="95" CorBarra="bg-pink-500" CorTexto="text-pink-400" />
+            <SkillBar Nome="CSS3" Progresso="80" CorBarra="bg-pink-500" CorTexto="text-pink-400" />
+            <SkillBar Nome="JavaScript" Progresso="50" CorBarra="bg-pink-500" CorTexto="text-pink-400" />
+            <SkillBar Nome="Bootstrap" Progresso="80" CorBarra="bg-pink-500" CorTexto="text-pink-400" />
+            <SkillBar Nome="Tailwind CSS" Progresso="40" CorBarra="bg-pink-500" CorTexto="text-pink-400" />
+        </SkillCategory>
+
+        <SkillCategory Titulo="Base de Dados" Icone="database" CorFundoIcone="bg-blue-600/20 text-blue-400">
+            <SkillBar Nome="SQL Server" Progresso="70" CorBarra="bg-blue-500" CorTexto="text-blue-400" />
+            <SkillBar Nome="Entity Framework Core" Progresso="80" CorBarra="bg-blue-500" CorTexto="text-blue-400" />
+        </SkillCategory>
+
+        <SkillCategory Titulo="Ferramentas" Icone="terminal" CorFundoIcone="bg-emerald-600/20 text-emerald-400">
+            <SkillBar Nome="Git & GitHub" Progresso="60" CorBarra="bg-emerald-500" CorTexto="text-emerald-400" />
+            <SkillBar Nome="QuestPDF" Progresso="50" CorBarra="bg-emerald-500" CorTexto="text-emerald-400" />
+            <SkillBar Nome="UML" Progresso="70" CorBarra="bg-emerald-500" CorTexto="text-emerald-400" />
+        </SkillCategory>
+
+    </div>
+
+    <div class="text-center mt-10">
+        <p class="text-gray-400 font-bold mb-8 uppercase tracking-widest text-sm">Technologias & Ferramentas</p>
+        <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+            @foreach (var tech in TodasTechs)
+            {
+                <span class="px-5 py-2.5 rounded-xl bg-[#1a1f2e] border border-white/5 text-gray-400 text-sm font-medium hover:border-purple-500/50 transition-all">
+                    @tech
+                </span>
+            }
+        </div>
+    </div>
+</section>
+
+@code {
+    private List<string> TodasTechs = new() {
+        "C#", ".NET Core", "ASP.NET MVC", "REST APIs", "LinQ",
+        "Blazor", "HTML5", "CSS3", "JavaScript", "Bootstrap", "Tailwind CSS",
+        "SQL Server", "Entity Framework Core",
+        "Git", "GitHub", "QuestPDF", "UML", "WordPress"
+    };
+}

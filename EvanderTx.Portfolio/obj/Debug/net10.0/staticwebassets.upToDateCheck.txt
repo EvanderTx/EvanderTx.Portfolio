@@ -1,0 +1,6 @@
+wwwroot\css\app.css
+wwwroot\icon-192.png
+wwwroot\images\evandertx.png
+wwwroot\tailwind.css
+F:\MYSSD\Programming\Front-End\Blazor WASM\EvanderTx.Portfolio\EvanderTx.Portfolio\wwwroot\css\app.css
+F:\MYSSD\Programming\Front-End\Blazor WASM\EvanderTx.Portfolio\EvanderTx.Portfolio\wwwroot\tailwind.css
