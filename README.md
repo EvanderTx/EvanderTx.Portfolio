@@ -22,8 +22,9 @@ Este é o meu portfólio profissional, desenvolvido com **Blazor WebAssembly** e
 ```text
 /
 ├── Components/           # Componentes Razor reutilizáveis (SkillBar, ExperienceCard, etc.)
+|   ├── Shared/           # Menus e Componentes globais
+├── Layout/               # Layouts
 ├── Pages/                # Páginas principais da aplicação
-├── Shared/               # Layouts, Menus e Componentes globais
 ├── wwwroot/
 │   ├── css/              # Estilos globais e output do Tailwind
 │   ├── images/           # Assets visuais e fotos
