@@ -2,7 +2,7 @@
 
 Este é o meu portfólio profissional, desenvolvido com **Blazor WebAssembly** e **Tailwind CSS**. O projeto foi construído focado em alta performance, design moderno (Dark Mode/Glassmorphism) e uma experiência de usuário fluida com animações reativas ao scroll.
 
-![Preview do Portfólio](images/evandertx.png) ## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 * **Framework:** [Blazor WebAssembly](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) (C# .NET 8/9)
 * **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
@@ -13,7 +13,6 @@ Este é o meu portfólio profissional, desenvolvido com **Blazor WebAssembly** e
 ## ✨ Funcionalidades
 
 - **Design Responsivo:** Adaptado para dispositivos móveis, tablets e desktops.
-- **Animate on Scroll:** Elementos que surgem suavemente conforme o usuário navega pela página.
 - **Componentização:** Arquitetura limpa utilizando componentes reutilizáveis para Experiência, Habilidades e Formação.
 - **Seção de Habilidades Dinâmica:** Barras de progresso estilizadas com cores temáticas por categoria (Backend, Frontend, etc.).
 - **Interatividade:** Links diretos para GitHub, LinkedIn e abertura automática de cliente de e-mail.
@@ -30,6 +29,7 @@ Este é o meu portfólio profissional, desenvolvido com **Blazor WebAssembly** e
 │   ├── images/           # Assets visuais e fotos
 │   └── index.html        # Ponto de entrada com scripts JS customizados
 └── tailwind.config.js    # Configurações de cores e fontes personalizadas
+```
 🚀 Como Rodar o Projeto Localmente
 Pré-requisitos:
 
