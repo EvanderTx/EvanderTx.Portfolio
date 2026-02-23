@@ -51,7 +51,7 @@ Executar a aplicação:
 Bash
 dotnet watch run
 📩 Contato
-LinkedIn: linkedin.com/in/evandertx
+LinkedIn: [linkedin.com/in/evandertx](https://www.linkedin.com/in/evander-teixeira-148795196/)
 
 GitHub: @EvanderTx
 
