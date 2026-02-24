@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EvanderTx.Portfolio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a11fd0d91e224abb8e5a7079c26734e55a13718f")]
 [assembly: System.Reflection.AssemblyProductAttribute("EvanderTx.Portfolio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EvanderTx.Portfolio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

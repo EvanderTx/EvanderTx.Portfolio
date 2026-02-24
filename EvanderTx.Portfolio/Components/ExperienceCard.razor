@@ -68,9 +68,17 @@
     {
         if (firstRender)
         {
-            // Importante: Inicializa o Scroll Reveal e os ícones
-            await JS.InvokeVoidAsync("initScrollReveal");
-            await JS.InvokeVoidAsync("lucide.createIcons");
+            // Aguarda um pequeno instante para garantir que o DOM e scripts externos carregaram
+            await Task.Delay(100);
+            try
+            {
+                await JS.InvokeVoidAsync("window.initPortfolio");
+            }
+            catch (Exception ex)
+            {
+                // Isso evita que o erro "trave" a aplicação e mostre a barra de erro
+                Console.WriteLine("Aguardando scripts: " + ex.Message);
+            }
         }
     }
 }

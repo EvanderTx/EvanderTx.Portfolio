@@ -5,47 +5,182 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EvanderTx.Portfolio</title>
-    <base href="/" />
-    <link rel="preload" id="webassembly" />
+    <base href="./" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="tailwind.css" />
+    <!--<link rel="stylesheet" href="tailwind.css" />-->
     <!-- If you add any scoped CSS files, uncomment the following to load them
     <link href="EvanderTx.Portfolio.styles.css" rel="stylesheet" /> -->
-    <script type="importmap"></script>
+    <!--<script type="importmap"></script>-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0a0a0f',
+                        card: '#12121a',
+                        border: '#2e2e3e',
+                        primary: '#8b5cf6',
+                        'primary-light': '#a78bfa',
+                        'primary-dark': '#7c3aed',
+                        muted: '#94a3b8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2e2e3e;
+            border-radius: 4px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #3e3e4e;
+            }
+
+        /* Gradient text - ajustado para corresponder à imagem */
+        .gradient-text {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glow effect */
+        .glow {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+            .card-hover:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+            }
+
+        /* Grid pattern background - mais sutil */
+        .grid-pattern {
+            background-image: linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Scroll indicator animation */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce 2s infinite;
+        }
+
+        /* Mobile menu transition */
+        .mobile-menu {
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+            .mobile-menu.open {
+                max-height: 300px;
+                opacity: 1;
+            }
+
+        /* Estilo específico para as barras de progresso das habilidades */
+        .skill-bar {
+            background: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 100%);
+            height: 100%;
+            border-radius: 9999px;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-background text-white antialiased">
     <div id="app">
     </div>
 
-    <!--<div id="blazor-error-ui">
+    <div id="blazor-error-ui" class="hidden fixed bottom-0 w-full z-[100] bg-red-500 text-white p-2 text-center">
         Ocorreu um erro inesperado.
-        <a href="" class="reload">Recarregar</a>
-        <span class="dismiss">🗙</span>
-    </div>-->
+        <a href="" class="reload underline">Recarregar</a>
+        <span class="dismiss cursor-pointer ml-4">🗙</span>
+    </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
-        // Função para garantir que os ícones e o reveal funcionem sem crashar
-        window.initPortfolio = () => {
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-background/90', 'backdrop-blur-md', 'border-b', 'border-border');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('bg-background/90', 'backdrop-blur-md', 'border-b', 'border-border');
+                header.classList.add('bg-transparent');
             }
+        });
 
-            // Inicializa o Scroll Reveal que criámos
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1 });
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
 
-            document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+    </script>
+
+    <script>
+        window.setupScrollListener = (dotNetHelper) => {
+            window.addEventListener('scroll', () => {
+                dotNetHelper.invokeMethodAsync('OnWindowScroll', window.scrollY);
+            });
         };
     </script>
 
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
 

@@ -1,62 +1,95 @@
 ﻿@inject NavigationManager Nav
+@inject IJSRuntime JS
 
-<nav class="fixed top-0 left-0 w-full z-50 bg-[#0b0e14]/80 backdrop-blur-md border-b border-white/5">
+<!-- Header -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 @(_headerClass)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <div class="flex items-center gap-4 flex-shrink-0 cursor-pointer" @onclick='() => Nav.NavigateTo("/")'>
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <span class="text-xl font-bold gradient-text">Evander Teixeira</span>
+            </a>
+        
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#sobre" class="text-sm text-muted hover:text-white transition-colors duration-200">Sobre</a>
+                <a href="#experiencia" class="text-sm text-muted hover:text-white transition-colors duration-200">Experiência</a>
+                <a href="#habilidades" class="text-sm text-muted hover:text-white transition-colors duration-200">Habilidades</a>
+                <a href="#formacao" class="text-sm text-muted hover:text-white transition-colors duration-200">Formação</a>
+                <a href="#contacto" class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white rounded-md transition-all duration-200 text-sm font-medium">
+                    Contacto
+                </a>
+            </nav>
+        
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-white p-2" @onclick="ToggleMenu">
+                <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
     
-@*                 <div class="relative w-10 h-10 md:w-10 md:h-10 rounded-full border-2 border-purple-500/30 p-1 backdrop-blur-sm">
-                    <img src="images/evandertx.png"
-                         class="w-full h-full rounded-full object-cover border-2 border-purple-500 shadow-[0_0_20px_rgba(168,85,247,0.4)]"
-                         alt="Evander Teixeira" />
-                </div> *@
-                <span class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Evander Teixeira</span>
-            </div>
-
-            <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-8">
-                    <a href="#sobre" class="text-gray-300 hover:text-purple-400 transition-colors">Sobre</a>
-                    <a href="#experiencia" class="text-gray-300 hover:text-purple-400 transition-colors">Experiência</a>
-                    <a href="#habilidades" class="text-gray-300 hover:text-purple-400 transition-colors">Habilidades</a>
-                    <a href="#formacao" class="text-gray-300 hover:text-purple-400 transition-colors">Formação</a>
-                    <a href="#contacto" class="text-gray-300 hover:text-purple-400 transition-colors text-purple-400">Contacto</a>
-                </div>
-            </div>
-
-            <div class="md:hidden">
-                <button @onclick="ToggleMenu" class="text-gray-300 hover:text-white focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        @if (isMenuOpen)
-                        {
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        }
-                        else
-                        {
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                        }
-                    </svg>
-                </button>
-            </div>
-
-        </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="@(isMenuOpen?"open":"hidden")  mobile-menu md:hidden bg-card border-b border-border">
+        <nav class="flex flex-col px-4 py-4 gap-4">
+            <a @onclick="ToggleMenu" href="#sobre" class="text-muted hover:text-white transition-colors duration-200 py-2">Sobre</a>
+            <a @onclick="ToggleMenu" href="#experiencia" class="text-muted hover:text-white transition-colors duration-200 py-2">Experiência</a>
+            <a @onclick="ToggleMenu" href="#habilidades" class="text-muted hover:text-white transition-colors duration-200 py-2">Habilidades</a>
+            <a @onclick="ToggleMenu" href="#formacao" class="text-muted hover:text-white transition-colors duration-200 py-2">Formação</a>
+            <a @onclick="ToggleMenu" href="#contacto" class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white rounded-md transition-all duration-200 text-sm font-medium text-center">
+                Contacto
+            </a>
+        </nav>
     </div>
-
-    <div class="@(isMenuOpen ? "block" : "hidden") md:hidden bg-[#0b0e14] border-b border-white/5">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-            <a href="#sobre" @onclick="ToggleMenu" class="block px-3 py-2 text-gray-300 hover:text-purple-400">Sobre</a>
-            <a href="#experiencia" @onclick="ToggleMenu" class="block px-3 py-2 text-gray-300 hover:text-purple-400">Experiência</a>
-            <a href="#habilidades" @onclick="ToggleMenu" class="block px-3 py-2 text-gray-300 hover:text-purple-400">Habilidades</a>
-            <a href="#contacto" @onclick="ToggleMenu" class="block px-3 py-2 text-purple-400 font-bold">Contacto</a>
-        </div>
-    </div>
-</nav>
+</header>
 
 
 @code {
     private bool isMenuOpen = false;
+    private bool _isScrolled = false;
+    private void ToggleMenu() => isMenuOpen = !isMenuOpen;
 
-    private void ToggleMenu()
+    // Define as classes dinamicamente baseadas no estado
+    private string _headerClass => _isScrolled
+        ? "bg-background/90 backdrop-blur-md border-b border-border"
+        : "bg-transparent";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        isMenuOpen = !isMenuOpen;
+        if (firstRender)
+        {
+            var dotNetObjRef = DotNetObjectReference.Create(this);
+            await JS.InvokeVoidAsync("setupScrollListener", dotNetObjRef);
+
+
+            // Aguarda um pequeno instante para garantir que o DOM e scripts externos carregaram
+            await Task.Delay(100);
+            try
+            {
+                await JS.InvokeVoidAsync("window.initPortfolio");
+            }
+            catch (Exception ex)
+            {
+                // Isso evita que o erro "trave" a aplicação e mostre a barra de erro
+                Console.WriteLine("Aguardando scripts: " + ex.Message);
+            }
+        }
+    }
+
+    [JSInvokable]
+    public void OnWindowScroll(double scrollY)
+    {
+        var shouldBeScrolled = scrollY > 50;
+        
+        // Só atualiza o estado se houver mudança (performance)
+        if (shouldBeScrolled != _isScrolled)
+        {
+            _isScrolled = shouldBeScrolled;
+            StateHasChanged();
+        }
     }
 }
